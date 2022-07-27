@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:shoppingapp/ShoppingBasket.dart';
 
 class myBottomNav extends StatelessWidget {
   const myBottomNav({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class myBottomNav extends StatelessWidget {
         notchMargin: 15,
         child: Container(
           height: 70,
-          
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -32,7 +32,10 @@ class myBottomNav extends StatelessWidget {
                 icon: Icon(Icons.search, size: 30),
               ),
               IconButton(
-                  onPressed: () => {},
+                  onPressed: () => {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ShoppingBasket()))
+                      },
                   icon: Icon(Icons.shopping_basket, size: 30))
             ],
           ),

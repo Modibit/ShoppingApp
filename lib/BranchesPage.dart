@@ -14,7 +14,7 @@ class BranchesPage extends StatefulWidget {
 }
 
 class _BranchesPageState extends State<BranchesPage> {
-  Set<Marker> _brancheslist={};
+  Set<Marker> _brancheslist = {};
   late final Completer<GoogleMapController> _controller = Completer();
 
   void onComplete(GoogleMapController controller) {
@@ -58,6 +58,7 @@ class _BranchesPageState extends State<BranchesPage> {
       ),
       body: GoogleMap(
         markers: _brancheslist,
+        liteModeEnabled: true,
         onMapCreated: onComplete,
         initialCameraPosition:
             CameraPosition(target: LatLng(32.795030, 52.149781), zoom: 5),
